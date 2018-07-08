@@ -1,9 +1,9 @@
 
 var args = require("minimist")(process.argv.slice(2), { string: "name" });
-var name = args.name;
+var file = args.file;
 
 function printHelp() {
-    console.log("1.js  (c) kotu");
+    console.log("2Q.js  (c) kotu");
     console.log("");
     console.log("Usage:");
     console.log("--help                   print this help");
@@ -16,20 +16,12 @@ if (args.help || !args.file){
     process.exit(1);
 }
 
-var hello = require("./helloworld.js");
+var hello = require("./helloworldQ.js");
 
-hello.say(args.file, function (err, contents) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(contents.toString()); 
-    }
-});
-
-//try with promise
-hello.say2(args.file)
-    .then(function success(contents){
+var p = hello.say(file)
+    .then(function s(contents) {
         console.log(contents.toString());
-    }, function error(err){
-        console.log(err);
+    })
+    .fail(function (e){
+        console.log(e);
     });

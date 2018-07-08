@@ -1,0 +1,18 @@
+{
+	"name": "kotu-helloworld",
+	"version": "0.0.1-a",
+	"description": "hello world",
+	"main": "./helloworld3.js",
+	"keywords": [
+		"hello",
+		"world"
+	],
+	"dependencies": {
+		"minimist": "1.2.0",
+		"q": "1.5.1",
+		"asynquence": "0.10.2",
+		"asynquence-contrib": "0.28.2"
+	},
+	"author": "Venkat Kotu <vikkii89@gmail.com>",
+	"license": "MIT"
+}
