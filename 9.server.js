@@ -54,6 +54,7 @@ function handleIo(socket){
 
     socket.on('message', function (msg) {
         console.log('Incoming message: ' + msg);
+        socket.broadcast.emit("message", msg);
         socket.emit('message', "Ack : " + new Date().getTime() );
     });
 };
